@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{{ title|striptags }}{% endblock title %} | The Register-Guard</title>
+
+	{% block opengraph %} 
+	<meta property="og:url" content="{{ ROOT_URL }}/{{ PATH }}" />
+	<meta property="og:title" content="{{ title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="{{ opengraph_image }}" />
+	<meta property="og:description" content="{{ opengraph_description }}" />
+	{% endblock opengraph %}
+
+	{% block meta %}
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	{% endblock meta %}
+	
+	{% block favicon %}
+	<link rel="shortcut icon" href="/favicon{% if preview_mode %}-preview{% endif %}.ico" />
+	{% endblock %}
+
+	{% block library_css %}
+	<!--
+	<link rel="stylesheet" href="http://static.registerguard.com/v5/bulldog/dist/1.0.0/20170530/1/css/bulldog.min.css">
+	-->
+	{% endblock library_css %}
+	
+	<!-- [BEGIN] Zeppelin -->
+		<link rel="stylesheet" href="http://static.registerguard.com/v5/zeppelin/prod/0.1.0/20140911/1/styles/zeppelin.min.css">
+		<script src="http://static.registerguard.com/v5/zeppelin/prod/0.1.0/20140911/1/scripts/zeppelin.min.js"></script>
+	<!-- [END] Zeppelin -->
+	
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.registerguard.com/all.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	{% block css %}
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	{% endblock %}
+	
+	{% block extra_css %}{% endblock extra_css %}
+
+	{% block shim %}
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	{% endblock %}
+	
+	<!-- ************************************************* -->
+	<!-- ************          DFP          ************** -->
+	<!-- ************************************************* -->
+		<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141020">
+		
+		<!--// Begin Bidder //-->
+		<script type="text/javascript" src="//os4m-d.openx.net/w/1.0/jstag?nc=30582678-OS4_Bidder"></script>
+		<script type="text/javascript">
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+			var gads = document.createElement("script");
+			gads.async = true;
+			gads.type = "text/javascript";
+			var useSSL = "https:" == document.location.protocol;
+			gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+			var node =document.getElementsByTagName("script")[0];
+			node.parentNode.insertBefore(gads, node);
+			})();
+		</script>
+		<!--// End Bidder //-->
+		
+		<script>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+		</script>
+		
+		<script>
+		
+			googletag.cmd.push(function() {
+			
+			// Set up size mapping
+			var mapping = googletag.sizeMapping()
+				.addSize([0, 0], [320, 50]) // Default banner is mobile banner (320x50)
+				.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)
+				.build();
+				
+			googletag.defineSlot('/30582678/RGM/news/local', [[320, 50], [728, 90]], 'leaderboard-top')
+				.setTargeting('pos', ['atf'])
+				.defineSizeMapping(mapping)
+				.addService(googletag.pubads());
+			googletag.defineSlot('/30582678/RGM/news/local', [[300, 600],[300, 250]], 'medium-rectangle-1')
+				.setTargeting('pos', ['atf','rgm_one'])
+				.addService(googletag.pubads());
+			
+			googletag.defineSlot('/30582678/RGM/news/local', [[320, 50], [728, 90]], 'leaderboard-bottom')
+				.setTargeting('pos', ['btf'])
+				.defineSizeMapping(mapping)
+				.addService(googletag.pubads());
+				
+			googletag.pubads().setTargeting('page-type','article');
+			googletag.pubads().setTargeting('rgm_subcat',['local_news', 'solar_eclipse']);
+			googletag.pubads().setTargeting('rgm_article_id','eclipse-2017');
+			
+			// General stuff
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+			googletag.enableServices();
+		});
+		
+	</script>
+	
+	<!-- ************************************************* -->
+	<!-- ************          /DFP         ************** -->
+	<!-- ************************************************* -->
+	
+</head>
+<body>
+
+	{% block nav %}
+		{% include "_nav.html" %}
+	{% endblock nav %}
+	
+	<div id="wrapper">
+		{% block header %}{% endblock header %}
+		
+		<div id="content">
+			
+			<div id="bd_banner-top" class="bd_banner">
+		
+				<!-- //////////////////// Leaderboard Top \\\\\\\\\\\\\\\\\\\\ -->
+				<div class="advert">
+					<div id="leaderboard-top">
+						<script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script>
+					</div>
+				</div>
+				<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard Top //////////////////// -->
+		
+			</div><!-- /#bd_banner-top /.bd_banner -->
+			
+			{% block content %}{% endblock content %}
+			
+			<hr>
+			
+			<!-- //////////////////// Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
+			<div id="bd_banner-bottom" class="bd_banner">
+				<div class="advert">
+					<div id="leaderboard-bottom">
+						<script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script>
+					</div>
+				</div>
+			</div>
+			<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard Bottom //////////////////// -->
+			
+		</div><!-- /#content -->
+		
+		
+	</div><!-- /#wrapper -->
+
+	{% block footer %}
+		{% include "_footer.html" %}
+	{% endblock footer %}
+
+	{% block library_scripts %}
+	<script>if(!window.jQuery){document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"><\/script>');}</script>
+	{% endblock library_scripts %}
+
+	{% block scripts %}
+	<script src="js/scripts.js"></script>
+	{% endblock %}
+	
+	{% block extra_js %}{% endblock extra_js %}
+
+	{% block google_analytics %}
+	<!-- [BEGIN] Analytics -->
+	<script>
+		(function(r,g,n,e,w,s){r.GoogleAnalyticsObject=e;r[e]||(r[e]=function(){(r[e].q=r[e].q||[]).push(arguments)});r[e].l=+new Date;w=g.createElement(n);s=g.getElementsByTagName(n)[0];w.async=1;w.src='//www.google-analytics.com/analytics.js';s.parentNode.insertBefore(w,s)}(window,document,'script','ga'));
+		ga('create','UA-882065-1','registerguard.com');
+		ga('require','displayfeatures');
+		ga('require','linkid','linkid.js');
+		ga('send','pageview',{
+			'dimension1':'{{ byline }}',
+			'dimension2':'{{ slug }}',
+			'dimension3':'{{ pubdate }}',
+			'dimension4':'{{ url }}',
+			'dimension5':'{{ opengraph_description }}'
+		});
+	</script>
+	<!-- [END] Analytics -->
+	{% endblock google_analytics %}
+</body>
+</html>

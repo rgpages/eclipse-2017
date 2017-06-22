@@ -1,0 +1,47 @@
+{% macro photoside(headline, url, img, tease, pubdate) -%}
+	<article>
+		<div class="fix">
+			{% if img %}
+				<div class="w_B300 w_B300fr">
+					<figure>
+						<a href="{{ url }}"><img src="{{ img }}" width="100%" style="max-height:inherit;" /></a>
+					</figure>
+				</div>
+			{% endif %}
+			<div>
+				<header>
+					<h1 class="h5"><a href="{{ url }}">{{ headline }}</a></h1>
+					
+				</header>
+				<p>{{ tease }}</p>
+			</div>
+		</div> <!-- /.fix /.w_row -->
+	</article>
+	<hr>
+{%- endmacro %}
+
+{% macro barhead(headline, url, img, tease, pubdate) -%}
+	<article>
+		<div class="wrap give">
+			<div class="force">
+				<figure>
+					<a href='{{ url }}'>
+						{% if img %}
+							<div class="rg-hop">
+						{% else %}
+							<div class="rg-hop" style="position:relative">
+						{% endif %}
+							<div class="rg-hop-inner">
+								<h1 class="h3 rg-hop-white">{{ headline }}</h1>
+							</div><!-- /.rg-hop-inner -->
+						</div><!-- /.rg-hop, etc. -->
+						{% if img %}
+							<img src="{{ img }}" class="img1">
+						{% endif %}
+					</a><!-- closes wrapping link -->
+				</figure>
+			</div> <!-- /.force -->
+		</div> <!-- /.wrap .give -->
+	</article>
+	<hr>
+{%- endmacro %}

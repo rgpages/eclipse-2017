@@ -1,0 +1,164 @@
+{% extends '_base.html' %}
+{% from '_macros.html' import barhead, photoside %}
+
+{% block extra_css %}
+<style>
+	/* stuff here */
+</style>
+{% endblock extra_css %}
+
+{% block header %}
+<div id="header">
+	<div id="eclipse-map"></div>
+
+	<section id="masthead" class="wrap">
+	
+		<div class="core">
+		
+			<h2>View of a lifetime</h2>
+			<h1>Coverage of Oregon's view of the 2017 solar eclipse</h1>
+		
+			<div class="sharing">
+			
+				<a title="Share on Facebook" class="social social-facebook fa-stack fa-lg" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F" target="_blank" rel="nofollow">
+					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
+					<span class="off">Share on Facebook</span>
+				</a>
+			
+				<a title="Tweet this" class="social social-twitter fa-stack fa-lg" href="https://twitter.com/intent/tweet?text=Eclipse%202017%20%7C%20Coverage%20of%20Oregon's%20view%20of%20the%202017%20solar%20eclipse&amp;url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F&amp;via=registerguard" target="_blank" rel="nofollow">
+					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+					<span class="off">Tweet this</span>
+				</a>
+			
+				<a title="Share on Reddit" class="social social-reddit fa-stack fa-lg" href="https://www.reddit.com/submit?url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F" target="_blank" rel="nofollow">
+					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-reddit-alien fa-stack-1x fa-inverse" aria-hidden="true"></i>
+					<span class="off">Share on Reddit</span>
+					
+				</a>
+			
+				<a title="Share on LinkedIn" class="social social-tumblr fa-stack fa-lg" href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F&amp;title=Eclipse%202017" target="_blank" rel="nofollow">
+					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse" aria-hidden="true"></i>
+					<span class="off">Share on LinkedIn</span>
+					
+				</a>
+			
+			</div>
+		
+		</div> <!-- /.core -->
+	
+	</section> <!-- /#masthead -->
+</div><!-- /#header -->
+{% endblock header %}
+
+{% block content %}
+
+<div class="flex">
+	<div class="right">
+		<div section="intro">
+			<h3>Introduction</h3>
+			<p class="dropcap">Oregon residents and visitors situated in the right spot on Monday, Aug. 21 will be treated to a rare sight, a total solar eclipse. Just after 10 a.m., the shadow of the Moon will move from the north-central Oregon coast, past Corvallis and Salem, right through Madras and out of the state into Idaho before 10:30.</p>
+			<p>Getting into place might be tricky, however, thanks the estimated hundreds of thousands of visitors to the state for the event. Heavy traffic is expected within the path of totality, the 70-mile-wide swath through the state where a full eclipse will be visible. Campsites in and near the path have been booked up for months, even after state parkes officials opened up an extra 1,000 spots. Likewise, hotel rooms near the path have been in high demand.</p>
+			<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
+			<p>Regardless of where you are in Oregon, experts are cautioning potential observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
+			<p>The Register-Guard with have more than a dozen reporters and photographers spread throughout the state to bring you the latest information about the eclipse. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back with us for a full recap in the afternoon.</p>
+		</section><!-- /#intro -->
+		<hr>
+		<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
+		<h3>Advertisement</h3>
+		<div class="advert">
+			<div id="medium-rectangle-1">
+				<script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script>
+			</div>
+		</div>
+		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
+	</div><!-- /.right -->
+	<div class="middle">
+		<section id="stories">
+			<h3>Stories</h3>
+			{% for s in stories %}
+			
+				{% if s.template == "photo-side" %}
+					{{ photoside(s.headline, s.url, s.img, s.tease, s.pubdate) }}
+				{% elif s.template == "bar-head" %}
+					{{ barhead(s.headline, s.url, s.img, s.tease, s.pubdate) }}
+				{% endif %}
+			
+			{% endfor %}
+		</section><!-- /#stories -->
+	</div><!-- /.middle -->
+	<div class="left">
+		<section id="resources">
+			<h3>Resources</h3>
+			<ul>
+			{% for r in resources %}
+				<li><a href="{{ r.url }}" target="_blank">{{ r.info }}</a></li>
+			{% endfor %}
+			</ul>
+		</section><!-- /#resources -->
+		<hr>
+		<section id="videos">
+			<div style="display: block; position: relative; max-width: 100%;">
+				<div style="padding-top: 56.25%;">
+					<video 
+						id='brightcove-5460247434001'
+						data-playlist-id='5460247434001'
+						data-account='4350897271001' 
+						data-player='ByxofOnHog' 
+						data-embed='default' 
+						data-application-id 
+						class='video-js' 
+						controls 
+						style='width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;'>
+					</video>
+				</div>
+			</div>
+			<ol class="vjs-playlist"></ol>
+			<script type="text/javascript">
+				var player;
+				function setupIMA(){
+					player.ima3({
+						serverUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=1280x720&iu=/30582678/RGM/news/local&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=%5Breferrer_url%5D&description_url=%5Bdescription_url%5D&correlator=%5Btimestamp%5D',
+						prerollTimeout: 5000,
+						postrollTimeout: 5000,
+						loadingSpinner: true,
+						debug: false,
+						adTechOrder: ['html5']
+					});
+					player.one('play', function(){
+						player.on('contentupdate', function(){
+							player.ima3.adsLoader.contentComplete();
+						})
+					});
+				}
+				document.addEventListener("DOMContentLoaded", function() {
+					videojs('brightcove-5460247434001').ready(function() {
+						player = this;
+						setupIMA();
+						player.on('adstart', function(event) {
+							ga('send', 'event', 'video', 'videoAd', 'videoAd');
+						});
+						player.on("play", function(event) {
+							ga('send', 'event', 'video', 'videoStart', 'videoStart');
+						});
+					});
+				});
+			</script>
+			<script src="//players.brightcove.net/4350897271001/ByxofOnHog_default/index.min.js"></script>
+			<footer>
+				<p class="jump"><a href="http://registerguard.com/rg/news/local/35684029-75/eclipse-101-your-introduction-to-the-aug.-21-total-solar-eclipse-in-oregon.csp" target="_blank">More <span>Videos</span> &raquo;</a></p>
+			</footer>
+		</section><!-- /#videos -->
+	</div><!-- /.left -->
+</div><!-- /.flex -->
+
+<hr>
+
+<p class="BodyText-BodyText_Tagline">Page designed by <a href="mailto:rob.denton@registerguard.com">Rob Denton</a>. Follow him on Twitter <a href="http://twitter.com/robertrdenton">@robertrdenton</a>.</p>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+	/* stuff here */
+</script>
+{% endblock extra_js %}
