@@ -1,0 +1,65 @@
+article.photo-side{
+	
+	header{ width: 100%; }
+	
+	div.fix{
+		@media all and (min-width: 640px) and (max-width: 979px){
+			figure.img{
+				max-width: 300px;
+				float: right;
+				margin: 0 0 0 20px;
+			}
+		}
+		@media all and (min-width: 1280px){
+			figure.img{
+				max-width: 300px;
+				float: right;
+				margin: 0 0 0 20px;
+			}
+		}
+		
+		div.tease p{ margin: 0; }
+		
+	}
+	
+	div.aflex{
+		width: 100%;
+		margin: 0;
+		/* See: https://css-tricks.com/using-flexbox/ */
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		-ms-flex-direction: row;
+		-webkit-flex-direction: row;
+		flex-direction: row;			
+		-ms-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+		
+		figure.img, div.tease{
+			padding: 0;
+			-webkit-flex-grow: 1;
+			flex-grow: 1;
+			-webkit-flex-shrink: 0;
+			flex-shrink: 0;
+		}
+		
+		figure.img{ 
+			-ms-flex-preferred-size: 260px;
+			-ms-flex-preferred-size: 260px;
+			-webkit-flex-basis: 260px;
+			flex-basis: 260px;
+			-ms-flex-order: 2; -webkit-order: 2; order: 2; 
+		}
+		
+		div.tease{
+			-ms-flex-preferred-size: 300px;
+			-ms-flex-preferred-size: 300px;
+			-webkit-flex-basis: 300px;
+			flex-basis: 300px;
+		}
+		
+	}
+	
+}

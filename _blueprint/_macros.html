@@ -1,23 +1,20 @@
 {% macro photoside(headline, url, img, tease, pubdate) -%}
-	<article>
+	<article class="photo-side">
+		<header>
+			<h1 class="h5"><a href="{{ url }}">{{ headline }}</a></h1>
+		</header>
 		<div class="fix">
 			{% if img %}
-				<div class="w_B300 w_B300fr">
-					<figure>
-						<a href="{{ url }}"><img src="{{ img }}" width="100%" style="max-height:inherit;" /></a>
-					</figure>
-				</div>
+				<figure class="img">
+					<a href="{{ url }}"><img src="{{ img }}" width="100%" style="max-height:inherit;" /></a>
+				</figure><!-- /.img -->
 			{% endif %}
-			<div>
-				<header>
-					<h1 class="h5"><a href="{{ url }}">{{ headline }}</a></h1>
-					
-				</header>
+			<div class="tease">
 				<p>{{ tease }}</p>
-			</div>
-		</div> <!-- /.fix /.w_row -->
-	</article>
-	<hr>
+			</div><!-- /.tease -->
+		</div> <!-- /.aflex -->
+		<hr>
+	</article><!-- /.photo-side -->
 {%- endmacro %}
 
 {% macro barhead(headline, url, img, tease, pubdate) -%}

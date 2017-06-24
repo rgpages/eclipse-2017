@@ -49,10 +49,11 @@
 	<![endif]-->
 	{% endblock %}
 	
+	{#
 	<!-- ************************************************* -->
 	<!-- ************          DFP          ************** -->
 	<!-- ************************************************* -->
-		<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141020">
+		<!-- <link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141020"> -->
 		
 		<!--// Begin Bidder //-->
 		<script type="text/javascript" src="//os4m-d.openx.net/w/1.0/jstag?nc=30582678-OS4_Bidder"></script>
@@ -114,9 +115,10 @@
 	<!-- ************************************************* -->
 	<!-- ************          /DFP         ************** -->
 	<!-- ************************************************* -->
+	#}
 	
 </head>
-<body>
+<body id="on">
 
 	{% block nav %}
 		{% include "_nav.html" %}
@@ -127,8 +129,9 @@
 		
 		<div id="content">
 			
+			{#
 			<div id="bd_banner-top" class="bd_banner">
-		
+				
 				<!-- //////////////////// Leaderboard Top \\\\\\\\\\\\\\\\\\\\ -->
 				<div class="advert">
 					<div id="leaderboard-top">
@@ -136,11 +139,13 @@
 					</div>
 				</div>
 				<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard Top //////////////////// -->
-		
+				
 			</div><!-- /#bd_banner-top /.bd_banner -->
+			#}
 			
 			{% block content %}{% endblock content %}
 			
+			{#
 			<hr>
 			
 			<!-- //////////////////// Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
@@ -152,6 +157,7 @@
 				</div>
 			</div>
 			<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard Bottom //////////////////// -->
+			#}
 			
 		</div><!-- /#content -->
 		

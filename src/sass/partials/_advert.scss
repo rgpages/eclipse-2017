@@ -1,29 +1,8 @@
-.banner {
-	
-	text-align: center;
-	border-width: 1px 0;
-	border-style: solid;
-	border-color: $grayd;
-	//background: $graye;
-	padding: 5px 0 10px;
-	margin: 25px 0;
-	
-	> p {
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: .15em;
-		color: $gray9;
-		margin: 0;
-		padding: 0;
-	}
-	
-}
-
 .advert {
 	
 	text-align: center; // Oldschool centering technique.
 	position: relative; // Just in case ad decides to `position: absolute;` without a `position: relative;` parent.
-	margin: 0 auto;  // Putting `auto` here to assist `.advert`s that have a width.
+	margin: 15px auto;  // Putting `auto` here to assist `.advert`s that have a width.
 	
 	* {
 		// http://meyerweb.com/eric/tools/css/reset/

@@ -117,6 +117,18 @@ a.social {
 	
 }
 
+a.eclipse {
+	
+	&,
+	&:visited,
+	.no-touch &:visited:hover,
+	&:focus,
+	.no-touch &:focus:hover,
+	.no-touch &:hover,
+	&:active { color: #ca4700; }
+	
+}
+
 a.social-twitter {
 	
 	&,

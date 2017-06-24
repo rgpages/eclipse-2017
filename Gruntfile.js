@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       },
       dist: {
         // the files to concatenate
-        src: ['src/js/leaflet.js','src/js/map.js','src/js/main.js'],
+        src: ['src/js/leaflet.js','src/js/lights.js','src/js/map.js','src/js/main.js'],
         // the location of the resulting JS file
         dest: 'js/scripts.js'
       }

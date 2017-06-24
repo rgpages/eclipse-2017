@@ -1,2 +1,7 @@
 // Add javascript here
-console.log('robbyd4');
+$().ready(function(){
+	$('#show').click(function(){
+		$('article').show();
+		$('#show').hide();
+	});
+});

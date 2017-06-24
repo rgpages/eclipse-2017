@@ -16,7 +16,7 @@
 		<div class="core">
 		
 			<h2>View of a lifetime</h2>
-			<h1>Coverage of Oregon's view of the 2017 solar eclipse</h1>
+			<h1>Coverage of the 2017 solar eclipse above Oregon</h1>
 		
 			<div class="sharing">
 			
@@ -41,6 +41,12 @@
 					<span class="off">Share on LinkedIn</span>
 					
 				</a>
+				
+				<a title="Eclipse button" class="social eclipse fa-stack fa-lg" href="#eclipse" rel="nofollow" onClick="toggle();return false;">
+					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i id="do-not-press" class="fa fa-moon-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
+					<span class="off">Eclipse button</span>
+					
+				</a>
 			
 			</div>
 		
@@ -53,15 +59,16 @@
 {% block content %}
 
 <div class="flex">
-	<div class="right">
-		<div section="intro">
+	<div class="flex-right">
+		<section id="intro">
 			<h3>Introduction</h3>
-			<p class="dropcap">Oregon residents and visitors situated in the right spot on Monday, Aug. 21 will be treated to a rare sight, a total solar eclipse. Just after 10 a.m., the shadow of the Moon will move from the north-central Oregon coast, past Corvallis and Salem, right through Madras and out of the state into Idaho before 10:30.</p>
-			<p>Getting into place might be tricky, however, thanks the estimated hundreds of thousands of visitors to the state for the event. Heavy traffic is expected within the path of totality, the 70-mile-wide swath through the state where a full eclipse will be visible. Campsites in and near the path have been booked up for months, even after state parkes officials opened up an extra 1,000 spots. Likewise, hotel rooms near the path have been in high demand.</p>
+			<p class="dropcap">Oregon residents and visitors situated in the right spot on Monday, Aug. 21 will be treated to a rare sight. Just after 10 a.m., the shadow of the Moon will move from the north-central Oregon coast, past Corvallis and Salem, right through Madras and out of the state into Idaho before 10:30.</p>
+			<p>Getting into place might be tricky, however, thanks to the one million estimated visitors to the state. Heavy traffic is expected within the path of totality, the 70-mile-wide swath through the state where a full solar eclipse will be visible. Campsites in and near the path have been booked up for months, even after state parkes officials opened up an extra 1,000 spots. Likewise, hotel rooms near the path have been in high demand.</p>
 			<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
 			<p>Regardless of where you are in Oregon, experts are cautioning potential observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
 			<p>The Register-Guard with have more than a dozen reporters and photographers spread throughout the state to bring you the latest information about the eclipse. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back with us for a full recap in the afternoon.</p>
 		</section><!-- /#intro -->
+		{#
 		<hr>
 		<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
 		<h3>Advertisement</h3>
@@ -71,10 +78,11 @@
 			</div>
 		</div>
 		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
+		#}
 	</div><!-- /.right -->
-	<div class="middle">
+	<div class="flex-middle">
+		<h3>Stories</h3>
 		<section id="stories">
-			<h3>Stories</h3>
 			{% for s in stories %}
 			
 				{% if s.template == "photo-side" %}
@@ -84,9 +92,10 @@
 				{% endif %}
 			
 			{% endfor %}
+			<button id="show">Show more</button>
 		</section><!-- /#stories -->
 	</div><!-- /.middle -->
-	<div class="left">
+	<div class="flex-left">
 		<section id="resources">
 			<h3>Resources</h3>
 			<ul>
@@ -97,13 +106,14 @@
 		</section><!-- /#resources -->
 		<hr>
 		<section id="videos">
+			<h3>Eclipse 101 lecture</h3>
 			<div style="display: block; position: relative; max-width: 100%;">
 				<div style="padding-top: 56.25%;">
 					<video 
 						id='brightcove-5460247434001'
 						data-playlist-id='5460247434001'
 						data-account='4350897271001' 
-						data-player='ByxofOnHog' 
+						data-player='S1xKuygiXZ' 
 						data-embed='default' 
 						data-application-id 
 						class='video-js' 
@@ -143,9 +153,9 @@
 					});
 				});
 			</script>
-			<script src="//players.brightcove.net/4350897271001/ByxofOnHog_default/index.min.js"></script>
+			<script src="//players.brightcove.net/4350897271001/S1xKuygiXZ_default/index.min.js"></script>
 			<footer>
-				<p class="jump"><a href="http://registerguard.com/rg/news/local/35684029-75/eclipse-101-your-introduction-to-the-aug.-21-total-solar-eclipse-in-oregon.csp" target="_blank">More <span>Videos</span> &raquo;</a></p>
+				<p class="jump"><a href="http://registerguard.com/rg/news/local/35684029-75/eclipse-101-your-introduction-to-the-aug.-21-total-solar-eclipse-in-oregon.csp" target="_blank">More <span>eclipse videos</span> &raquo;</a></p>
 			</footer>
 		</section><!-- /#videos -->
 	</div><!-- /.left -->
