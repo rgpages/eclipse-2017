@@ -1,0 +1,131 @@
+// Regular file with minor mods below
+
+/* *** BASIC STYLING ISSUES *** */
+/* Fix top-level issues */
+.vjs-mouse.vjs-playlist{
+	background-color: rgba(0,0,0,0);
+	padding: 0;
+	margin: 10px 0;
+}
+/* Fix ad-overlay margins */
+.vjs-playlist.vjs-ad-playing .vjs-playlist-ad-overlay{
+	margin: 0;
+}
+/* Fix list item */
+.vjs-mouse.vjs-playlist .vjs-playlist-item{
+	margin: 10px auto;
+}
+
+/* *** PLAY BUTTON *** */
+/* Disappear the play button / Other styling attempts that I gave up on */
+/* The only thing that matters in here is the display: none; */
+.video-js .vjs-big-play-button{
+	display: none;
+	visibility: hidden;	
+}
+
+/* *** BASIC OVERLAY TEXT AND BACKGROUND *** */
+/* Set basics for before video and during video playing */
+.video-js .vjs-dock-text{
+	/* Mimic Bulldog */
+	font-family: "MillerHeadline Bold",Cambria,Georgia,serif;
+	font-size: 1.2em;
+	-moz-osx-font-smoothing: grayscale;
+	padding: 10px;
+}
+/* Set background for text overlay */
+.vjs-ima3-not-playing-yet .vjs-dock-text{
+	transition: all 0.5s ease;
+	top: auto; /* Move to bottom */
+	bottom: 0;
+	background: rgba(0,0,0,.4); /* Set background */
+}
+.vjs-ima3-not-playing-yet:focus .vjs-dock-text,
+.vjs-ima3-not-playing-yet:hover .vjs-dock-text{
+	transition: all 0.5s ease;
+	background: rgba(0,0,0,.8); /* Hover background color */
+}
+/* Add play button before headline */
+.vjs-ima3-not-playing-yet .vjs-dock-title:before{
+	font-family: FontAwesome;
+	content: "\f144";
+	margin: 4px;
+}
+/* overlay text */
+.vjs-ima3-not-playing-yet .vjs-dock-title{
+	overflow: visible; /* Show full headline */
+	white-space: normal;
+	transition: all 0.5s ease;
+	color: white; /* Text color */
+}
+/* Disappear decks */
+#vjs-dock-description-2{
+	display: none;
+}
+
+/* *** LIST STYLES *** */
+/* Format list items */
+.vjs-mouse.vjs-playlist .vjs-playlist-item{
+	height: auto;
+	padding: 10px 0 11px 0;
+	margin: 0;
+	display: list-item;
+}
+/* Disappear all videos after the fourth */
+// .vjs-mouse.vjs-playlist .vjs-playlist-item:nth-child(n+5){
+// 	display: none;
+// }
+/* Disappear the current vid */
+.vjs-mouse.vjs-playlist .vjs-playlist-item.vjs-selected{
+	display:none;
+}
+/* Add border top */
+// .vjs-mouse.vjs-playlist .vjs-playlist-item:nth-child(-n+4){
+// 	border-top: 1px solid #ccc;
+// }
+.vjs-mouse.vjs-playlist .vjs-playlist-item{
+	border-top: 1px solid #ccc;
+}
+.vjs-mouse.vjs-playlist .vjs-playlist-item:nth-child(n+5){
+	border-bottom: 1px solid #ccc;
+}
+/* Make list play button bigger on hover */
+.vjs-mouse.vjs-playlist .vjs-playlist-item:focus .vjs-playlist-thumbnail:before,
+.vjs-mouse.vjs-playlist .vjs-playlist-item:hover .vjs-playlist-thumbnail:before {
+	background-color: rgba(26,26,26,.7);
+	border-radius: 0px;
+	font-family: VideoJS;
+	left: auto;
+	top: auto;
+	width: 121px;
+	height: 68px;
+	line-height: 68px;
+	font-size: 36px;
+	content: "\f101";
+}
+/* Change headline look, mimic Bulldog .h5 */
+.vjs-mouse.vjs-playlist cite{
+	overflow: hidden; /* Fix headline length issues */
+	display: block;
+	white-space: normal;
+	color: #000000; /* Fix headline styling issues */
+	font-size: 1em;
+	line-height: 1.3em;
+	font-family: "MillerHeadline Bold",Cambria,Georgia,serif;
+	height: auto;
+}
+/* Disappear decks */
+.vjs-mouse.vjs-playlist .vjs-playlist-description, #vjs-dock-description-2{
+	display: none;
+}
+/* Fix duration positioning for margin */
+.vjs-playlist .vjs-playlist-duration{
+	display: none;
+	visibility: hidden;
+}
+.vjs-playlist .vjs-playlist-duration:before{
+	content: "[";
+}
+.vjs-playlist .vjs-playlist-duration:after{
+	content: "]";
+}

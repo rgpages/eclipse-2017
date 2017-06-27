@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     sass: {
       options: {
         noCache: true,
@@ -10,11 +10,11 @@ module.exports = function(grunt) {
       },
       development: {
         files: {
-          'css/main.css': 'src/sass/main.scss'
+          'css/main.css': '_src/sass/main.scss'
         }
       }
     },
-    
+
     concat: {
       options: {
         // define a string to put between each file in the concatenated output
@@ -22,12 +22,12 @@ module.exports = function(grunt) {
       },
       dist: {
         // the files to concatenate
-        src: ['src/js/leaflet.js','src/js/lights.js','src/js/map.js','src/js/main.js'],
+        src: ['_src/js/leaflet.js','_src/js/lights.js','_src/js/map.js','_src/js/main.js'],
         // the location of the resulting JS file
         dest: 'js/scripts.js'
       }
     },
-    
+
     uglify: {
       options: {
         // the banner is inserted at the top of the output
@@ -39,10 +39,19 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
+	copy: {
+		dist: {
+			expand: true,
+			cwd: '_src/media',
+			src: '*',
+			dest: 'media/',
+		},
+	},
+
     watch: {
       styles: {
-        files: ['src/sass/**/*', 'src/js/*.js'], // which files to watch
+        files: ['_src/sass/**/*', '_src/js/*.js'], // which files to watch
         tasks: ['sass', 'concat', 'uglify'],
       }
     }
@@ -52,5 +61,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['sass', 'concat', 'uglify']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'copy']);
 }

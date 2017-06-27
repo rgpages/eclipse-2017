@@ -1,0 +1,23 @@
+@mixin font-awesome() {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+}
+
+@mixin miller-bold() {
+	font-family: "MillerHeadline Bold", $font2;
+	font-weight: bold;
+	font-style: normal;
+}
+
+@mixin miller-light() {
+	font-family: "MillerHeadline Light", $font2;
+	font-style: normal;
+	font-style: normal;
+}
+
+@mixin benton() {
+	font-family: "BentonSansCond Regular", $font1;
+	font-style: normal;
+	font-weight: bold;
+}

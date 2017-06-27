@@ -1,0 +1,12 @@
+#eclipse-map{
+	margin-top: 40px;
+	height: 300px;
+}
+@media (min-width: 640px){
+	#eclipse-map{
+		height: 400px;
+	}
+}
+
+// Move zoom behind zeppelin
+.leaflet-top{ z-index: 998; }

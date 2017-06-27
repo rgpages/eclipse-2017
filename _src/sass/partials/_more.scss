@@ -1,0 +1,32 @@
+#stories article:nth-of-type(n+4){ display: none; }
+
+button#show{
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	background: $color1;
+	color: $milk;
+	border: none;
+	
+	&:hover{
+		background: darken($color1, 20%);
+		cursor: pointer;
+	}
+	
+}
+
+body#off{
+	button#show{
+		background: $color2;
+		color: $raven;
+	
+		&:hover{
+			background: lighten($color2, 20%);
+		}
+	
+	}
+}

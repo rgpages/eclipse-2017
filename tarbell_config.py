@@ -17,7 +17,7 @@ EXCLUDES = ["*.md", "requirements.txt"]
 # CREATE_JSON = True
 
 # Get context from a local file or URL. This file can be a CSV or Excel
-# spreadsheet file. Relative, absolute, and remote (http/https) paths can be 
+# spreadsheet file. Relative, absolute, and remote (http/https) paths can be
 # used.
 # CONTEXT_SOURCE_FILE = ""
 
@@ -28,12 +28,13 @@ EXCLUDES = ["*.md", "requirements.txt"]
 # CREDENTIALS_PATH = ""
 
 # S3 bucket configuration
-#S3_BUCKETS = {
+S3_BUCKETS = {
     # Provide target -> s3 url pairs, such as:
     #     "mytarget": "mys3url.bucket.url/some/path"
     # then use tarbell publish mytarget to publish to it
-    
-#}
+	"production": "cloud.registerguard.com/eclipse",
+
+}
 
 # Default template variables
 DEFAULT_CONTEXT = {
