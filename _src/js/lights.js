@@ -4,7 +4,7 @@ function toggle(){
 	var button = document.getElementById('do-not-press');
 	if (lights == 'on'){
 		document.body.id = 'off';
-		wrapper.style.backgroundImage = 'url(media/bw-eclipse.jpg)';
+		wrapper.style.backgroundImage = 'url(media/bw-eclipse-small.jpg)';
 		button.classList.remove('fa-moon-o');
 		button.classList.add('fa-sun-o');
 	} else {

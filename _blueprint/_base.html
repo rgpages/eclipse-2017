@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block title %}{{ title|striptags }}{% endblock title %} | The Register-Guard</title>
+	<title>{% block title %}{{ title|striptags }}{% endblock title %} | The Register-Guard | Eugene, Oregon</title>
 
 	{% block opengraph %} 
-	<meta property="og:url" content="{{ ROOT_URL }}/{{ PATH }}" />
-	<meta property="og:title" content="{{ title }}" />
+	<meta property="og:url" content="{{ url }}" />
+	<meta property="og:title" content="{{ og_title }}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="{{ opengraph_image }}" />
-	<meta property="og:description" content="{{ opengraph_description }}" />
+	<meta property="og:image" content="{{ og_image }}" />
+	<meta property="og:description" content="{{ og_description }}" />
 	{% endblock opengraph %}
 
 	{% block meta %}
@@ -18,15 +18,13 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	{% endblock meta %}
 	
-	{% block favicon %}
-	<link rel="shortcut icon" href="/favicon{% if preview_mode %}-preview{% endif %}.ico" />
-	{% endblock %}
-
+	{#
 	{% block library_css %}
 	<!--
 	<link rel="stylesheet" href="http://static.registerguard.com/v5/bulldog/dist/1.0.0/20170530/1/css/bulldog.min.css">
 	-->
 	{% endblock library_css %}
+	#}
 	
 	<!-- [BEGIN] Zeppelin -->
 		<link rel="stylesheet" href="http://static.registerguard.com/v5/zeppelin/prod/0.1.0/20140911/1/styles/zeppelin.min.css">

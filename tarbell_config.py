@@ -32,12 +32,12 @@ S3_BUCKETS = {
     # Provide target -> s3 url pairs, such as:
     #     "mytarget": "mys3url.bucket.url/some/path"
     # then use tarbell publish mytarget to publish to it
-	"production": "cloud.registerguard.com/eclipse",
+	"production": "cloud.registerguard.com/eclipse/",
 
 }
 
 # Default template variables
 DEFAULT_CONTEXT = {
-    'name': 'eclipse-2017',
+    'name': 'eclipse',
     'title': 'Eclipse 2017'
 }

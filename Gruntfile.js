@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         files: ['_src/sass/**/*', '_src/js/*.js'], // which files to watch
-        tasks: ['sass', 'concat', 'uglify'],
+        tasks: ['sass', 'concat', 'uglify', 'copy'],
       }
     }
   });
