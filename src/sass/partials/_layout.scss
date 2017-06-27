@@ -1,38 +1,7 @@
-#wrapper{
-	margin-top: 40px;
-	background: $milk;
-}
-
-#content{
-	width: 100%;
-	max-width: 1320px;
-	margin: 0 auto;
-	padding: 0;
-	overflow: hidden;
-}
-
-// Meant to wrap `.core`:
-.wrap {
-	
-	padding: {
-		right: 25px;
-		left: 25px;
-	}
-	
-	@media all and (min-width: 640px) {
-		
-		padding: {
-			right: 50px;
-			left: 50px;
-		}
-		
-	}
-	
-}
-
 #header {
 	
 	background-color: $raven;
+	box-shadow: 2px 2px 8px $gray6;
 	
 	#masthead > div {
 		
@@ -116,41 +85,30 @@
 	
 }
 
-footer[role="contentinfo"] {
-	
-	margin: 25px 0 50px;
-	text-align: center;
-	
-	p {
-		font: 11px/24px Arial, sans-serif;
-		text-transform: uppercase;
-		letter-spacing: .1em;
-		color: $gray6;
-		margin: 0;
-		padding: 0;
+#wrapper{
+	#content{
+		width: 100%;
+		max-width: 1320px;
+		margin: 0 auto;
+		padding: 10px 0;
+		overflow: hidden;
 	}
+}
+
+// Meant to wrap `.core`:
+.wrap {
 	
-	span { display: block; }
-	span span { display: none; }
-	
-	a {
-		color: $gray9;
-		text-decoration: none;
-	}
-	a:visited { color: $gray9; }
-	.no-touch a:visited:hover,
-	a:focus,
-	.no-touch a:focus:hover,
-	.no-touch a:hover,
-	a:active {
-		color: $raven;
-		text-decoration: underline;
+	padding: {
+		right: 25px;
+		left: 25px;
 	}
 	
 	@media all and (min-width: 640px) {
 		
-		span,
-		span span { display: inline; }
+		padding: {
+			right: 50px;
+			left: 50px;
+		}
 		
 	}
 	

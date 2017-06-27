@@ -9,11 +9,24 @@ button#show{
 	text-transform: uppercase;
 	letter-spacing: .05em;
 	background: $color1;
+	color: $milk;
 	border: none;
 	
 	&:hover{
-		background: lighten($color1, 20%);
+		background: darken($color1, 20%);
 		cursor: pointer;
 	}
 	
+}
+
+body#off{
+	button#show{
+		background: $color2;
+		color: $raven;
+	
+		&:hover{
+			background: lighten($color2, 20%);
+		}
+	
+	}
 }

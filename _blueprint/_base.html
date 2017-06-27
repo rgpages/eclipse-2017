@@ -124,8 +124,9 @@
 		{% include "_nav.html" %}
 	{% endblock nav %}
 	
+	{% block header %}{% endblock header %}
+	
 	<div id="wrapper">
-		{% block header %}{% endblock header %}
 		
 		<div id="content">
 			
@@ -161,13 +162,12 @@
 			
 		</div><!-- /#content -->
 		
-		
 	</div><!-- /#wrapper -->
-
+	
 	{% block footer %}
 		{% include "_footer.html" %}
 	{% endblock footer %}
-
+	
 	{% block library_scripts %}
 	<script>if(!window.jQuery){document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"><\/script>');}</script>
 	{% endblock library_scripts %}

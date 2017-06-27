@@ -22,11 +22,11 @@ $squirtle: complement($charmander); // #0083ca (RG blue as starting point).
 $bulbasaur: adjust-hue($squirtle, -115deg); // Triad.
 $rattata: adjust-hue($squirtle, 115deg); // IBID.
 
+$rgmc: #4267b1;
+
 // Scheme:
-$color1: $charmander;
-$color2: $squirtle;
-$color3: $bulbasaur;
-$color4: $rattata;
+$color1: $rgmc;
+$color2: $charmander;
 
 // Boxes:
 $chili: #ffbaba;
@@ -39,6 +39,6 @@ $sans: Arial, sans-serif;
 $serif: Cambria, Georgia, serif;
 $mono: monospace, serif;
 
-$font1: $sans;
-$font2: $serif;
+$font2: $sans;
+$font1: $serif;
 $font3: $mono;

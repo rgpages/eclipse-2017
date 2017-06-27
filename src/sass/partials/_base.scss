@@ -35,7 +35,6 @@ body {
 	line-height: 20px;
 	font-family: $font1;
 	color: $raven;
-	background: $raven;
 	min-height: 100%;
 	text-rendering: optimizeLegibility;
 }
@@ -52,11 +51,11 @@ a {
 		color: $color1;
 		text-decoration: none;
 	}
-	.no-touch &:visited:hover,
+	&:visited:hover,
 	&:focus,
-	.no-touch &:focus:hover,
-	.no-touch &:hover,
-	&:active { color: saturate(lighten($color1, 20%), 20%); }
+	&:focus:hover,
+	&:hover,
+	&:active { color: saturate(darken($color1, 20%), 20%); }
 	
 }
 
@@ -70,6 +69,33 @@ a {
 	text-shadow: none;
 }
 
+body#off{
+	a {
+	
+		&,
+		&:visited {
+			color: $color2;
+			text-decoration: none;
+		}
+		&:visited:hover,
+		&:focus,
+		&:focus:hover,
+		&:hover,
+		&:active { color: saturate(lighten($color2, 20%), 20%); }
+	
+	}
+
+	::-moz-selection {
+		background: rgba($color2, .55);
+		text-shadow: none;
+	}
+
+	::selection {
+		background: rgba($color2, .55);
+		text-shadow: none;
+	}
+}
+
 ul{
 	padding: 0 0 0 20px;
 }
@@ -77,7 +103,7 @@ ul{
 hr {
 	
 	border: 0;
-	border-top: 4px solid $graye;
+	border-top: 1px solid $grayc;
 	height: 0;
 	margin: 10px 0;
 	padding: 0;
@@ -92,6 +118,12 @@ hr {
 		border-top-width: 1px;
 		border-color: $grayc;
 		margin: 25px 0;
+	}
+	
+	&.mobile{
+		@media all and (min-width: 980px){
+			display: none;
+		}
 	}
 	
 }

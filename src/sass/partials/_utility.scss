@@ -119,3 +119,9 @@
 .scroll-overlay::after { @include font-awesome; }
 .scroll-overlay::before { content: "\f0a5\00a0"; }
 .scroll-overlay::after { content: "\00a0\f0a4"; }
+
+.tagline{
+	margin: 0 10px;
+	padding: 10px 0;
+	font-style: italic;
+}

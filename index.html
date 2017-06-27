@@ -42,9 +42,9 @@
 					
 				</a>
 				
-				<a title="Eclipse button" class="social eclipse fa-stack fa-lg" href="#eclipse" rel="nofollow" onClick="toggle();return false;">
+				<a title="Eclipse mode" class="social eclipse fa-stack fa-lg" href="#eclipse" rel="nofollow" onClick="toggle();return false;">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i id="do-not-press" class="fa fa-moon-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
-					<span class="off">Eclipse button</span>
+					<span class="off">Eclipse mode</span>
 					
 				</a>
 			
@@ -61,17 +61,18 @@
 <div class="flex">
 	<div class="flex-right">
 		<section id="intro">
-			<h3>Introduction</h3>
-			<p class="dropcap">Oregon residents and visitors situated in the right spot on Monday, Aug. 21 will be treated to a rare sight. Just after 10 a.m., the shadow of the Moon will move from the north-central Oregon coast, past Corvallis and Salem, right through Madras and out of the state into Idaho before 10:30.</p>
-			<p>Getting into place might be tricky, however, thanks to the one million estimated visitors to the state. Heavy traffic is expected within the path of totality, the 70-mile-wide swath through the state where a full solar eclipse will be visible. Campsites in and near the path have been booked up for months, even after state parkes officials opened up an extra 1,000 spots. Likewise, hotel rooms near the path have been in high demand.</p>
+			<h3 class="head">Introduction</h3>
+			<p>Those in the right spot just after 10 a.m. on Monday, Aug. 21 will be treated to a rare sight. The shadow of the Moon will move from the north-central Oregon coast, over Corvallis and Salem, right through Madras, and out of the state into Idaho before 10:30.</p>
+			<p>Getting into place might be tricky, however, thanks to the <a href="http://registerguard.com/rg/news/local/35704820-75/eclipse-apocalypse.html.csp">one million estimated visitors</a> to the state. Heavy traffic is expected within the path of totality, the 70-mile-wide swath where a full solar eclipse will be visible. Campsites in and near the path have been <a href="http://registerguard.com/rg/news/local/35499966-75/new-oregon-eclipse-campsites-quickly-sell-out.html.csp">booked</a> for months, even after state parks officials opened up an extra 1,000 spots. Likewise, hotel rooms have been in high demand.</p>
 			<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
-			<p>Regardless of where you are in Oregon, experts are cautioning potential observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
-			<p>The Register-Guard with have more than a dozen reporters and photographers spread throughout the state to bring you the latest information about the eclipse. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back with us for a full recap in the afternoon.</p>
+			<p>Regardless of where you are in Oregon, experts are cautioning observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
+			<p>The Register-Guard with have several reporters and photographers spread throughout the state to bring you the latest information. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back for a full recap in the afternoon.</p>
+			<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (NASA)</p> 
 		</section><!-- /#intro -->
 		{#
 		<hr>
 		<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
-		<h3>Advertisement</h3>
+		<h3 class="head">Advertisement</h3>
 		<div class="advert">
 			<div id="medium-rectangle-1">
 				<script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script>
@@ -80,8 +81,11 @@
 		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
 		#}
 	</div><!-- /.right -->
+	
+	<hr class="mobile">
+	
 	<div class="flex-middle">
-		<h3>Stories</h3>
+		<h3 class="head">Stories</h3>
 		<section id="stories">
 			{% for s in stories %}
 			
@@ -95,19 +99,24 @@
 			<button id="show">Show more</button>
 		</section><!-- /#stories -->
 	</div><!-- /.middle -->
+	
+	<hr class="mobile">
+	
 	<div class="flex-left">
 		<section id="resources">
-			<h3>Resources</h3>
+			<h3 class="head">Resources</h3>
 			<ul>
 			{% for r in resources %}
-				<li><a href="{{ r.url }}" target="_blank">{{ r.info }}</a></li>
+				{% if r.status == 'on' %}
+					<li><a href="{{ r.url }}" target="_blank">{{ r.info }}</a></li>
+				{% endif %}
 			{% endfor %}
 			</ul>
 		</section><!-- /#resources -->
 		<hr>
 		<section id="videos">
-			<h3>Eclipse 101 lecture</h3>
-			<div style="display: block; position: relative; max-width: 100%;">
+			<h3 class="head">Eclipse 101 lecture</h3>
+			<div style="display: block; position: relative; max-width: 100%; margin-top: 10px;">
 				<div style="padding-top: 56.25%;">
 					<video 
 						id='brightcove-5460247434001'
@@ -161,9 +170,10 @@
 	</div><!-- /.left -->
 </div><!-- /.flex -->
 
-<hr>
-
-<p class="BodyText-BodyText_Tagline">Page designed by <a href="mailto:rob.denton@registerguard.com">Rob Denton</a>. Follow him on Twitter <a href="http://twitter.com/robertrdenton">@robertrdenton</a>.</p>
+<div class="tagline">
+	<hr>
+	<p>Page designed by <a href="mailto:rob.denton@registerguard.com">Rob Denton</a>. Follow him on Twitter <a href="http://twitter.com/robertrdenton">@robertrdenton</a>.</p>
+</div>
 
 {% endblock %}
 

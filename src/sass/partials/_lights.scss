@@ -1,11 +1,19 @@
+// Lights on
 body#on div#wrapper{
 	transition: all .5s ease, background-position 1ms, background-color 100ms;
 	-webkit-transition: all .5s ease, background-position 1ms, background-color 100ms;
 	-moz-transition: all .5s ease, background-position 1ms, background-color 100ms;
-	background: $milk;
 	color: $raven;
+	
+	.off-credit{
+		display: none;
+		visibility: hidden;
+	}
 }
 
+
+
+// Lights off
 body#off div#wrapper{
 	transition: all .5s ease, background-position 1ms, background-color 100ms;
 	-webkit-transition: all .5s ease, background-position 1ms, background-color 100ms;
@@ -26,4 +34,12 @@ body#off div#wrapper{
 		-moz-transition: all .5s ease;
 		color: $milk;
 	}
+	
+	.off-credit{
+		display: block;
+		visibility: visible;
+		font-style: italic;
+	}	
 }
+
+
