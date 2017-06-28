@@ -18,7 +18,7 @@ div#content div.flex{
 		-webkit-flex-direction: row;
 		flex-direction: row;
 		
-		.flex-right, .flex-middle, .flex-left {
+		.flex-left, .flex-middle, .flex-right {
 			padding: 0;
 			-webkit-flex-grow: 0;
 			flex-grow: 0;
@@ -26,7 +26,7 @@ div#content div.flex{
 			flex-shrink: 0;
 		}
 		
-		.flex-right {
+		.flex-left {
 			-ms-flex-preferred-size: 320px;
 			-ms-flex-preferred-size: 320px;
 			-webkit-flex-basis: 320px;
@@ -50,7 +50,7 @@ div#content div.flex{
 			
 			padding: 0 20px;
 		}
-		.flex-left {
+		.flex-right {
 			-ms-flex-preferred-size: 320px;
 			-ms-flex-preferred-size: 320px;
 			-webkit-flex-basis: 320px;

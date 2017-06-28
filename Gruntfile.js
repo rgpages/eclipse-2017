@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 
     watch: {
       styles: {
-        files: ['_src/sass/**/*', '_src/js/*.js'], // which files to watch
+        files: ['_blueprint/*.html','index.html','_src/sass/**/*', '_src/js/*.js'], // which files to watch
         tasks: ['sass', 'concat', 'uglify', 'copy'],
       }
     }
