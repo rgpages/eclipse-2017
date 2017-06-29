@@ -176,7 +176,7 @@ I tried to do the background image using only CSS but there were significant iss
 ## TODO
 
 * [ ] Write new copy block that can take over after the eclipse happens? Or should a social media feed go in here? Maybe grid of photos from Instagram?
-* [ ] Add playlist ID to Tarbell sheet so it can be easily swapped out
+* [x] Add playlist ID to Tarbell sheet so it can be easily swapped out
 * [ ] Fix flex names
 * [ ] Add fade to background image
 * [ ] ???

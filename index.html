@@ -14,46 +14,46 @@
 	<div id="eclipse-map"></div>
 
 	<section id="masthead" class="wrap">
-	
+
 		<div class="core">
-		
+
 			<h2>View of a lifetime</h2>
 			<h1>Coverage of the 2017 solar eclipse above Oregon</h1>
-		
+
 			<div class="sharing">
-			
+
 				<a title="Share on Facebook" class="social social-facebook fa-stack fa-lg" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F" target="_blank" rel="nofollow">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					<span class="off">Share on Facebook</span>
 				</a>
-			
+
 				<a title="Tweet this" class="social social-twitter fa-stack fa-lg" href="https://twitter.com/intent/tweet?text=Eclipse%202017%20%7C%20Coverage%20of%20the%202017%20solar%20eclipse%20above%20Oregon&amp;url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F&amp;via=registerguard" target="_blank" rel="nofollow">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					<span class="off">Tweet this</span>
 				</a>
-			
+
 				<a title="Share on Reddit" class="social social-reddit fa-stack fa-lg" href="https://www.reddit.com/submit?url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F" target="_blank" rel="nofollow">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-reddit-alien fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					<span class="off">Share on Reddit</span>
-					
+
 				</a>
-			
+
 				<a title="Share on LinkedIn" class="social social-tumblr fa-stack fa-lg" href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fcloud.registerguard.com%2Feclipse%2F&amp;title=Eclipse%202017" target="_blank" rel="nofollow">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					<span class="off">Share on LinkedIn</span>
-					
+
 				</a>
-				
+
 				<a title="Eclipse mode" class="social eclipse fa-stack fa-lg" href="#eclipse" rel="nofollow" onClick="toggle();return false;">
 					<i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i><i id="do-not-press" class="fa fa-moon-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					<span class="off">Eclipse mode</span>
-					
+
 				</a>
-			
+
 			</div>
-		
+
 		</div> <!-- /.core -->
-	
+
 	</section> <!-- /#masthead -->
 </div><!-- /#header -->
 {% endblock header %}
@@ -69,7 +69,7 @@
 			<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
 			<p>Regardless of where you are in Oregon, experts are cautioning observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
 			<p>The Register-Guard with have several reporters and photographers spread throughout the state to bring you the latest information. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back for a full recap in the afternoon.</p>
-			<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p> 
+			<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p>
 		</section><!-- /#intro -->
 		{#
 		<hr>
@@ -83,27 +83,27 @@
 		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
 		#}
 	</div><!-- /.left -->
-	
+
 	<hr class="mobile">
-	
+
 	<div class="flex-middle">
 		<h3 class="head">Stories</h3>
 		<section id="stories">
 			{% for s in stories %}
-			
+
 				{% if s.template == "photo-side" %}
 					{{ photoside(s.headline, s.url, s.img, s.tease, s.pubdate) }}
 				{% elif s.template == "bar-head" %}
 					{{ barhead(s.headline, s.url, s.img, s.tease, s.pubdate) }}
 				{% endif %}
-			
+
 			{% endfor %}
 			<button id="show">Show more</button>
 		</section><!-- /#stories -->
 	</div><!-- /.middle -->
-	
+
 	<hr class="mobile">
-	
+
 	<div class="flex-right">
 		<section id="resources">
 			<h3 class="head">Resources</h3>
@@ -120,15 +120,15 @@
 			<h3 class="head">Eclipse 101 lecture</h3>
 			<div style="display: block; position: relative; max-width: 100%; margin-top: 10px;">
 				<div style="padding-top: 56.25%;">
-					<video 
+					<video
 						id='brightcove-5460247434001'
-						data-playlist-id='5460247434001'
-						data-account='4350897271001' 
-						data-player='S1xKuygiXZ' 
-						data-embed='default' 
-						data-application-id 
-						class='video-js' 
-						controls 
+						data-playlist-id='{{ bc_playlist }}'
+						data-account='4350897271001'
+						data-player='S1xKuygiXZ'
+						data-embed='default'
+						data-application-id
+						class='video-js'
+						controls
 						style='width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;'>
 					</video>
 				</div>
