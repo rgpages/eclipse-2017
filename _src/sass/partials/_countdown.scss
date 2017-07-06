@@ -3,9 +3,12 @@
 	float: right;
 	text-align: center;
 	margin: 5px 10px;
+	border-left: 2px solid $rgmc;
+	padding-left: 10px;
 	
 	.label { 
-		color: $rgmc;
+		//color: $rgmc;
+		color: $raven;
 		padding: 0;
 	}
 	
