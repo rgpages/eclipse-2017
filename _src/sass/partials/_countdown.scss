@@ -1,0 +1,31 @@
+#countdown{
+	
+	float: right;
+	text-align: center;
+	margin: 5px 10px;
+	
+	.label { 
+		color: $rgmc;
+		padding: 0;
+	}
+	
+	h1 { margin: 0; } 
+	
+	h5 { 
+		text-transform: uppercase;
+		margin: 0;
+	}
+	
+}
+
+body#off{
+	
+	#countdown{
+		
+		h1, h5 { color: $milk; }
+		
+		.label { color: $charmander; }
+		
+	}
+	
+}
