@@ -4,7 +4,7 @@ div#content div.flex{
 	
 }
 
-@media all and (min-width: 980px){
+@media all and (min-width: $break){
 	
 	div#content div.flex{
 		width: 100%;

@@ -121,7 +121,7 @@ hr {
 	}
 	
 	&.mobile{
-		@media all and (min-width: 980px){
+		@media all and (min-width: $break){
 			display: none;
 		}
 	}

@@ -12,7 +12,7 @@
 			text-align: center;
 			margin-top: 15px;
 			
-			@media all and (min-width: 1280px) {
+			@media all and (min-width: $break) {
 				
 				margin: 0;
 				position: absolute;
@@ -28,7 +28,7 @@
 			text-align: center;
 			margin: 0;
 			
-			@media all and (min-width: 1280px) {
+			@media all and (min-width: $break) {
 				
 				text-align: left;
 				
@@ -47,7 +47,7 @@
 			color: $milk;
 			margin-bottom: 5px;
 			
-			@media all and (min-width: 1280px) {
+			@media all and (min-width: $break) {
 				
 				font-size: 90px;
 				line-height: 75px;
@@ -71,7 +71,7 @@
 			   -moz-font-feature-settings: "kern=1";
 			        font-feature-settings: "kern";
 			
-			@media all and (min-width: 1280px) {
+			@media all and (min-width: $break) {
 				
 				font-size: 30px;
 				line-height: 30px;

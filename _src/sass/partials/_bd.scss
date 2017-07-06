@@ -88,7 +88,7 @@ footer p.jump{
 		.logo{
 			max-width: 150px;
 		
-			@media (min-width: 980px) { float: right; }
+			@media (min-width: $break) { float: right; }
 		
 			img{
 				width: 100%;

@@ -10,7 +10,7 @@ article.photo-side{
 				margin: 0 0 0 20px;
 			}
 		}
-		@media all and (min-width: 1280px){
+		@media all and (min-width: $break){
 			figure.img{
 				max-width: 300px;
 				float: right;
