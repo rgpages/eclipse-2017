@@ -58,6 +58,26 @@ h6, .h6 { font-size: 16px; }   /* 16px */
 	@include miller-bold;
 }
 
+.li1 { 
+	
+	padding: 0;
+	margin: 5px 0 10px; 
+	
+	li {
+		@include miller-bold();
+		font-size: 1em; /* 16px */
+		font-weight: bold;
+		line-height: 1.125; /* (((1.5 / 1) = 1.5) * .75) = 1.125 */
+		letter-spacing: .01em;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: $grayd;
+		list-style: none;
+		margin-bottom: -1px;
+		padding: .25em 0;
+	}
+}
+
 footer p.jump{
 	font-style: italic;
 	text-align: right;
