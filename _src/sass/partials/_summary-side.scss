@@ -3,14 +3,15 @@ article.photo-side{
 	header{ width: 100%; }
 	
 	div.fix{
-		@media all and (min-width: 640px) and (max-width: 979px){
+		
+		@media all and (min-width: 640px) and (max-width: $break){
 			figure.img{
 				max-width: 300px;
 				float: right;
 				margin: 0 0 0 20px;
 			}
 		}
-		@media all and (min-width: $break){
+		@media all and (min-width: 1225px){
 			figure.img{
 				max-width: 300px;
 				float: right;
