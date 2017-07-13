@@ -1,6 +1,6 @@
 var el = document.getElementById('countdown'),
 end = new Date('08/21/2017 10:16 AM'),
-//end = new Date('07/11/2017 4:05 PM'),
+//end = new Date('07/13/2017 7:05 PM'),
 _second = 1000, _minute = _second * 60, _hour = _minute * 60, _day = _hour * 24, timer;
 function showRemaining() {
 	//HTML
@@ -18,7 +18,7 @@ function showRemaining() {
 		} else if (days == 1) {
 			el.innerHTML = head + '<h1>' + days + '</h1><h5>Day</h5>';
 		} else {
-			el.innerHTML = head + '<h4>Today is the<br>eclipse!</h4>';
+			el.innerHTML = head + '<h4>Less than<br>24 hours!</h4>';
 		}
 	}
 }
