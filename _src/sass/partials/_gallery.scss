@@ -1,16 +1,18 @@
 // modified version of https://github.com/rgpages/election-2016-general/blob/c3459d511af22a1f6787d08a0a260cdd5c9eaa81/source/files/styles/partials/_parallax.scss
-#slideshow {
+#gallery {
 	
 	height: 650px;
 	height: 65vh; // Awesome!
 	position: relative;
+	font-family: $sans;
 	//-webkit-transition: background 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
 	//transition: background 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
 	
-	div#slideshow-inner{//#parallax {
 		
-		background: url(/media/loader1.gif) no-repeat center center;
-		background-size: 40px;
+	background: url(/media/loader1.gif) no-repeat center center;
+	background-size: 40px;
+	
+	div#gallery-inner{//#parallax {
 		
 		//background-image: url(https://dl.dropboxusercontent.com/u/1277106/20141021-Oregon_Primary_Election_Sen.3.jpg);
 		background-position: center top;
@@ -99,7 +101,7 @@
 					
 					&::after { content: ""; }
 					
-					//span { display: none; }
+					span { display: none; }
 					
 				}
 				

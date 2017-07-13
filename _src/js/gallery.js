@@ -1,4 +1,4 @@
-var $slideshow = $('#slideshow');
+var $gallery = $('#gallery-inner');
 var $timeout;
 var count = 0;
 
@@ -30,8 +30,8 @@ function getImg(img){
 		'</span>'
 	].join('\n') : '';
 	
-	$slideshow.fadeOut(500, function(){
-		$slideshow.css('background', 'url(' + img.url + ')')
+	$gallery.fadeOut(500, function(){
+		$gallery.css('background-image', 'url(' + img.url + ')')
 			.html(template)
 			.fadeIn(500);
 	});
@@ -58,7 +58,7 @@ function getGal(id){
 		jsonpCallback: 'callback',
 		cache: 1800,
 		success: function() {
-			$slideshow.css('background','none');
+			$gallery.css('background-image','none');
 		},
 		error: function (request, status, error) { 
 		
@@ -68,7 +68,7 @@ function getGal(id){
 	})
 		.done(function($data) {
 			
-			$slideshow.fadeOut(500)
+			$gallery.fadeOut(500)
 			
 			var $images = [];
 			
@@ -91,7 +91,7 @@ function getGal(id){
 			// need to find recursive js settimeout() function to keep changing image
 			
 			getCounting($images);
-			window.setInterval(function(){getCounting($images);}, 150000);
+			window.setInterval(function(){getCounting($images);}, 15000);
 			
 			
 			
@@ -100,7 +100,7 @@ function getGal(id){
 			
 			
 			
-			// Basic slideshow
+			// Basic gallery
 			/*function timer(){
 				// Load the first images
 				console.log('time');
