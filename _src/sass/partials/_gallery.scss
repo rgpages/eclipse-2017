@@ -1,0 +1,112 @@
+// modified version of https://github.com/rgpages/election-2016-general/blob/c3459d511af22a1f6787d08a0a260cdd5c9eaa81/source/files/styles/partials/_parallax.scss
+#slideshow {
+	
+	height: 650px;
+	height: 65vh; // Awesome!
+	position: relative;
+	//-webkit-transition: background 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	//transition: background 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+	
+	div#slideshow-inner{//#parallax {
+		
+		background: url(/media/loader1.gif) no-repeat center center;
+		background-size: 40px;
+		
+		//background-image: url(https://dl.dropboxusercontent.com/u/1277106/20141021-Oregon_Primary_Election_Sen.3.jpg);
+		background-position: center top;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		   -moz-background-size: cover;
+		    -ms-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		display: block;
+		width: 100%;
+		height: 100%;
+		
+		> span {
+			
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 20px;
+			letter-spacing: .1em;
+			color: $grayc; // Color if no link.
+			background: rgba($raven, .75);
+			padding: 5px 10px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			
+			br { display: none; }
+			
+			> span:last-child {
+				
+				color: $gray8;
+				
+				&::before { content: "("; }
+				&::after { content: ")"; }
+				
+				span { display: inline; }
+				
+			}
+			
+			@media all and (min-width: 1280px) {
+				
+				font-size: 18px;
+				line-height: 44px;
+				background: transparent;
+				padding: 5px;
+				right: 50px;
+				bottom: 50px;
+				left: auto;
+				max-width: 350px;
+				
+				br { display: block; }
+				
+				> span:first-child {
+					
+					// https://github.com/mhulse/data/issues/18
+					padding: 10px;
+					background: rgba($raven, .75);
+					-webkit-box-decoration-break: clone;
+					   -moz-box-decoration-break: clone;
+					    -ms-box-decoration-break: clone;
+					     -o-box-decoration-break: clone;
+					        box-decoration-break: clone;
+					
+				}
+				
+				> span:last-child {
+					
+					font-size: 12px;
+					line-height: 18px;
+					text-transform: uppercase;
+					letter-spacing: .05em;
+					display: block;
+					margin: 10px 0 0 30px;
+					text-shadow: 0 1px 1px $raven,
+					             0 1px 1px $raven;
+					position: relative;
+					
+					&::before {
+						@include font-awesome;
+						content: "\f030";
+						position: absolute;
+						top: 0;
+						left: -1.8em;
+					}
+					
+					&::after { content: ""; }
+					
+					//span { display: none; }
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

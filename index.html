@@ -11,7 +11,12 @@
 
 {% block header %}
 <div id="header">
-	<div id="eclipse-map"></div>
+
+	{% if hero == 'gallery' %}
+		<div id="slideshow"><div id="slideshow-inner"></div></div>
+	{% else %}
+		<div id="eclipse-map"></div>
+	{% endif %}
 
 	<section id="masthead" class="wrap">
 
@@ -183,5 +188,6 @@
 {% block extra_js %}
 <script>
 	/* stuff here */
+	getGal({{ gallery }});
 </script>
 {% endblock extra_js %}
