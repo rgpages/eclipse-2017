@@ -77,7 +77,7 @@
 			<p>The Register-Guard will have several reporters and photographers spread throughout the state to bring you the latest information. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back for a full recap in the afternoon.</p>
 			<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p>
 		</section><!-- /#intro -->
-		{#
+		{% if ads == 1 %}
 		<hr>
 		<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
 		<h3 class="head">Advertisement</h3>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
-		#}
+		{% endif %}
 	</div><!-- /.left -->
 
 	<hr class="mobile">
@@ -123,58 +123,75 @@
 		</section><!-- /#resources -->
 		<hr>
 		<section id="videos">
-			<h3 class="head">Eclipse 101 lecture</h3>
-			<div style="display: block; position: relative; max-width: 100%; margin-top: 10px;">
-				<div style="padding-top: 56.25%;">
-					<video
-						id='brightcove-5460247434001'
-						data-playlist-id='{{ bc_playlist }}'
-						data-account='4350897271001'
-						data-player='S1xKuygiXZ'
-						data-embed='default'
-						data-application-id
-						class='video-js'
-						controls
-						style='width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;'>
-					</video>
+			<h3 class="head">Eclipse 101 videos</h3>
+			{% if brightcove_or_youtube == 'BC' %}
+				<div style="display: block; position: relative; max-width: 100%; margin-top: 10px;">
+					<div style="padding-top: 56.25%;">
+						<video
+							id='brightcove-5460247434001'
+							data-playlist-id='{{ bc_playlist }}'
+							data-account='4350897271001'
+							data-player='S1xKuygiXZ'
+							data-embed='default'
+							data-application-id
+							class='video-js'
+							controls
+							style='width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;'>
+						</video>
+					</div>
 				</div>
-			</div>
-			<ol class="vjs-playlist"></ol>
-			<script type="text/javascript">
-				var player;
-				function setupIMA(){
-					player.ima3({
-						serverUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=1280x720&iu=/30582678/RGM/news/local&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=%5Breferrer_url%5D&description_url=%5Bdescription_url%5D&correlator=%5Btimestamp%5D',
-						prerollTimeout: 5000,
-						postrollTimeout: 5000,
-						loadingSpinner: true,
-						debug: false,
-						adTechOrder: ['html5']
-					});
-					player.one('play', function(){
-						player.on('contentupdate', function(){
-							player.ima3.adsLoader.contentComplete();
-						})
-					});
-				}
-				document.addEventListener("DOMContentLoaded", function() {
-					videojs('brightcove-5460247434001').ready(function() {
-						player = this;
-						setupIMA();
-						player.on('adstart', function(event) {
-							ga('send', 'event', 'video', 'videoAd', 'videoAd');
+				<ol class="vjs-playlist"></ol>
+				<script type="text/javascript">
+					var player;
+					function setupIMA(){
+						player.ima3({
+							serverUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=1280x720&iu=/30582678/RGM/news/local&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=%5Breferrer_url%5D&description_url=%5Bdescription_url%5D&correlator=%5Btimestamp%5D',
+							prerollTimeout: 5000,
+							postrollTimeout: 5000,
+							loadingSpinner: true,
+							debug: false,
+							adTechOrder: ['html5']
 						});
-						player.on("play", function(event) {
-							ga('send', 'event', 'video', 'videoStart', 'videoStart');
+						player.one('play', function(){
+							player.on('contentupdate', function(){
+								player.ima3.adsLoader.contentComplete();
+							})
+						});
+					}
+					document.addEventListener("DOMContentLoaded", function() {
+						videojs('brightcove-5460247434001').ready(function() {
+							player = this;
+							setupIMA();
+							player.on('adstart', function(event) {
+								ga('send', 'event', 'video', 'videoAd', 'videoAd');
+							});
+							player.on("play", function(event) {
+								ga('send', 'event', 'video', 'videoStart', 'videoStart');
+							});
 						});
 					});
-				});
-			</script>
-			<script src="//players.brightcove.net/4350897271001/S1xKuygiXZ_default/index.min.js"></script>
+				</script>
+				<script src="//players.brightcove.net/4350897271001/S1xKuygiXZ_default/index.min.js"></script>
+				{% else %}
+					<div class="mm">
+						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL3_irPfizGSQ6iwYUeqQFxk4rlEUATWFG" frameborder="0" allowfullscreen></iframe>
+					</div><!-- /.mm -->
+				{% endif %}
 			<footer>
 				<p class="jump"><a href="http://registerguard.com/rg/news/local/35684029-75/eclipse-101-your-introduction-to-the-aug.-21-total-solar-eclipse-in-oregon.csp" target="_blank">More <span>eclipse videos</span> &raquo;</a></p>
 			</footer>
 		</section><!-- /#videos -->
+		{% if ads == 1 %}
+		<hr>
+		<!-- //////////////////// Medium Rectangle 2 \\\\\\\\\\\\\\\\\\\\ -->
+		<h3 class="head">Advertisement</h3>
+		<div class="advert">
+			<div id="medium-rectangle-2">
+				<script>googletag.cmd.push(function() { googletag.display('medium-rectangle-2'); });</script>
+			</div>
+		</div>
+		<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 2 //////////////////// -->
+		{% endif %}
 	</div><!-- /.right -->
 </div><!-- /.flex -->
 

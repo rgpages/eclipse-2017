@@ -1,0 +1,17 @@
+.mm {
+	height: 0;
+	padding-bottom: 56.25%; /* 16x9 ratio */
+	margin: 10px auto;
+	position: relative;
+	overflow: hidden;
+	
+	iframe,
+	object,
+	embed {
+		width: 100% !important;
+		height: 100% !important;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

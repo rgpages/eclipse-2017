@@ -47,7 +47,7 @@
 	<![endif]-->
 	{% endblock %}
 	
-	{#
+	{% if ads == 1 %}
 	<!-- ************************************************* -->
 	<!-- ************          DFP          ************** -->
 	<!-- ************************************************* -->
@@ -82,22 +82,30 @@
 			// Set up size mapping
 			var mapping = googletag.sizeMapping()
 				.addSize([0, 0], [320, 50]) // Default banner is mobile banner (320x50)
-				.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)
+				{#.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)#}
 				.build();
-				
+			
+			{#
 			googletag.defineSlot('/30582678/RGM/news/local', [[320, 50], [728, 90]], 'leaderboard-top')
 				.setTargeting('pos', ['atf'])
 				.defineSizeMapping(mapping)
 				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM/news/local', [[300, 600],[300, 250]], 'medium-rectangle-1')
+			#}
+			
+			googletag.defineSlot('/30582678/RGM/news/local', [300, 250], 'medium-rectangle-1')
 				.setTargeting('pos', ['atf','rgm_one'])
 				.addService(googletag.pubads());
 			
+			googletag.defineSlot('/30582678/RGM/news/local', [[300, 600],[300, 250]], 'medium-rectangle-2')
+				.setTargeting('pos', ['atf','rgm_two'])
+				.addService(googletag.pubads());
+			
+			{#
 			googletag.defineSlot('/30582678/RGM/news/local', [[320, 50], [728, 90]], 'leaderboard-bottom')
 				.setTargeting('pos', ['btf'])
 				.defineSizeMapping(mapping)
 				.addService(googletag.pubads());
-				
+			#}
 			googletag.pubads().setTargeting('page-type','article');
 			googletag.pubads().setTargeting('rgm_subcat',['local_news', 'solar_eclipse']);
 			googletag.pubads().setTargeting('rgm_article_id','eclipse-2017');
@@ -113,7 +121,7 @@
 	<!-- ************************************************* -->
 	<!-- ************          /DFP         ************** -->
 	<!-- ************************************************* -->
-	#}
+	{% endif %}
 	
 </head>
 <body id="on">
