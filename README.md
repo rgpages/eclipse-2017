@@ -16,6 +16,7 @@ This assumes you have [npm](https://docs.npmjs.com/getting-started/installing-no
 git clone git@github.com:rgpages/eclipse-2017.git
 cd eclipse-2017
 npm install
+grunt                      # may be necessary for .css .js updates
 workon tarbell
 tarbell serve <IP>         # will run with grunt watch
 tarbell publish <level>    # will run grunt, level = production on Rob's machine
