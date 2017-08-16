@@ -15,7 +15,9 @@
 	{% if hero == 'gallery' %}
 		<div id="gallery"><div id="gallery-inner"></div></div>
 	{% else %}
-		<div id="eclipse-map"></div>
+		<div class='map-bump'>
+			<div id="eclipse-map"></div>
+		</div>
 	{% endif %}
 
 	<section id="masthead" class="wrap">
@@ -93,7 +95,7 @@
 	<hr class="mobile">
 
 	<div class="flex-middle">
-		<h3 class="head">Stories</h3>
+		<h3 class="head">Latest … </h3>
 		<section id="stories">
 			{% for s in stories %}
 
@@ -196,6 +198,10 @@
 </div><!-- /.flex -->
 
 {% if hero == 'gallery' %}
+	{# photos up top, map down below #}
+	<h3 class="head map-head-shove">
+		Aug. 21, 2017, path of totality
+	</h3>
 	<div id="eclipse-map"></div>
 {% endif %}
 

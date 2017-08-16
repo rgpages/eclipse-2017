@@ -1,4 +1,6 @@
-#stories article:nth-of-type(n+4){ display: none; }
+#stories article:nth-of-type(n+5){ display: none; }
+
+#stories { margin-top: 12px; }
 
 button#show{
 	display: block;

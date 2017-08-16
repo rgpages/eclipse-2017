@@ -1,11 +1,19 @@
 #eclipse-map{
-	margin-top: 40px;
+	margin-top: 8px;
 	height: 300px;
 }
 @media (min-width: 640px){
 	#eclipse-map{
 		height: 400px;
 	}
+}
+
+.map-bump {
+	margin-top: 40px;
+}
+
+.map-head-shove {
+	margin-left: 20px;
 }
 
 // Move zoom behind zeppelin
