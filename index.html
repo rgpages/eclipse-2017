@@ -70,14 +70,21 @@
 <div class="flex">
 	<div class="flex-left">
 		<section id="intro">
-			<h3 class="head">Introduction</h3>
-			<p>Those in the right spot just after 10 a.m. on Monday, Aug. 21 will be treated to a rare sight. The shadow of the Moon will move from the north-central Oregon coast, over Corvallis and Salem, right through Madras, and out of the state into Idaho before 10:30.</p>
-			<div id="countdown"></div>
-			<p>Getting into place might be tricky, however, thanks to the <a href="http://registerguard.com/rg/news/local/35704820-75/eclipse-apocalypse.html.csp">one million estimated visitors</a> to the state. Heavy traffic is expected within the path of totality, the 70-mile-wide swath where a full solar eclipse will be visible. Campsites in and near the path have been <a href="http://registerguard.com/rg/news/local/35499966-75/new-oregon-eclipse-campsites-quickly-sell-out.html.csp">booked</a> for months, even after state parks officials opened up an extra 1,000 spots. Likewise, hotel rooms have been in high demand.</p>
-			<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
-			<p>Regardless of where you are in Oregon, experts are cautioning observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
-			<p>The Register-Guard will have several reporters and photographers spread throughout the state to bring you the latest information. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back for a full recap in the afternoon.</p>
-			<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p>
+			{% if intro %}
+				<h3 class="head">Introduction</h3>
+				<p>Those in the right spot just after 10 a.m. on Monday, Aug. 21 will be treated to a rare sight. The shadow of the Moon will move from the north-central Oregon coast, over Corvallis and Salem, right through Madras, and out of the state into Idaho before 10:30.</p>
+				<div id="countdown"></div>
+				<p>Getting into place might be tricky, however, thanks to the <a href="http://registerguard.com/rg/news/local/35704820-75/eclipse-apocalypse.html.csp">one million estimated visitors</a> to the state. Heavy traffic is expected within the path of totality, the 70-mile-wide swath where a full solar eclipse will be visible. Campsites in and near the path have been <a href="http://registerguard.com/rg/news/local/35499966-75/new-oregon-eclipse-campsites-quickly-sell-out.html.csp">booked</a> for months, even after state parks officials opened up an extra 1,000 spots. Likewise, hotel rooms have been in high demand.</p>
+				<p>Would-be viewers that can't make it into place for the eclipse will still be able to see a partial eclipse of 90 percent or more throughout the state.</p>
+				<p>Regardless of where you are in Oregon, experts are cautioning observers to not look directly at the sun without <a href="https://eclipse2017.nasa.gov/safety">proper eye protection</a>. Only during "totality" is it safe to look at an eclipse without specialized glasses.</p>
+				<p>The Register-Guard will have several reporters and photographers spread throughout the state to bring you the latest information. If you're not able to witness the eclipse in totality, be sure to follow along as we share photos and reports. If you are able to see the event, check back for a full recap in the afternoon.</p>
+				<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p>
+			{% else %}
+				<h3 class="head">Scenes from social media</h3>
+				<div class="storify-wrapper">
+						<div class="storify"><iframe src="//storify.com/registerguard/2017-total-solar-eclipse-over-oregon/embed?header=false&border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/registerguard/2017-total-solar-eclipse-over-oregon.js?header=false&border=false"></script><noscript>[<a href="//storify.com/registerguard/2017-total-solar-eclipse-over-oregon" target="_blank">View the story "2017 total solar eclipse over Oregon" on Storify</a>]</noscript></div>					<p class="off-credit">Background photo: An eclipse on July 11, 2010 captured by Jay M. Pasachoff, Muzhou Lu, and Craig Malamut Williams College Eclipse Expedition. (Williams College/<a href="https://www.nasa.gov/topics/solarsystem/sunearthsystem/main/News071510-Eclipse-composite.html" target="_blank">NASA</a>)</p>
+				</div> <!-- /.storify-wraper -->
+				{% endif %}
 		</section><!-- /#intro -->
 		{% if ads == 1 %}
 		<hr>
