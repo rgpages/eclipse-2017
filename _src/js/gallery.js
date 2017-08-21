@@ -30,10 +30,10 @@ function getImg(img){
 		'</span>'
 	].join('\n') : '';
 	
-	$gallery.fadeOut(500, function(){
+	$gallery.fadeOut(250, function(){
 		$gallery.css('background-image', 'url(' + img.url + ')')
 			.html(template)
-			.fadeIn(500);
+			.fadeIn(250);
 	});
 	
 }
@@ -68,7 +68,7 @@ function getGal(id){
 	})
 		.done(function($data) {
 			
-			$gallery.fadeOut(500)
+			$gallery.fadeOut(250)
 			
 			var $images = [];
 			
