@@ -1,3 +1,5 @@
+** `dist` directory added in March 2018 in preparation for GateHouse migration, in the event that cloud is taken away.**
+
 ## Links & such
 
 * URL: `http://cloud.registerguard.com/eclipse/`
